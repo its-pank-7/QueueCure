@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QueueCure Receptionist Dashboard</title>
+    <div class="hospital-header">
+
+        <img
+            src="assets/logo.png"
+            alt="QueueCure Logo"
+            class="logo">
+
+        <h2 class="hospital-name">
+            CityCare MultiSpeciality Hospital
+        </h2>
+
+    </div>
+    <div class="glass" style="text-align:center; margin-bottom:20px;">
+        <h2 id="liveClock">00:00:00</h2>
+    </div>
+    <button
+        class="fullscreen-btn"
+        onclick="document.documentElement.requestFullscreen()">
+        📺 Full Screen
+    </button>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="page-title">
+            <h1>🏥 QueueCure Dashboard</h1>
+            <p>Smart Hospital Queue Management System</p>
+        </div>
+
+        <!-- Statistics Cards -->
+
+        <div class="stats-grid">
+
+            <div class="glass stat-card">
+                <h3>👥 Total Patients</h3>
+                <h2 id="totalPatients">0</h2>
+            </div>
+
+            <div class="glass stat-card">
+                <h3>⏳ Waiting Patients</h3>
+                <h2 id="waitingPatients">0</h2>
+            </div>
+
+            <div class="glass stat-card">
+                <h3>🩺 Current Patient</h3>
+                <h2 id="currentPatient">0</h2>
+            </div>
+
+            <div class="glass stat-card">
+                <h3>⌛ Avg Time</h3>
+                <h2 id="avgTimeDisplay">5 Min</h2>
+            </div>
+
+            <div class="glass stat-card">
+
+                <h3>🤖 AI Accuracy</h3>
+
+                <h2>94%</h2>
+
+            </div>
+
+            <div class="glass stat-card">
+                <h3>✅ Completed</h3>
+                <h2 id="completedPatients">0</h2>
+            </div>
+
+            <div class="glass stat-card">
+                <h3>⏭ Skipped</h3>
+                <h2 id="skippedPatients">0</h2>
+            </div>
+
+            <button id="archiveDayBtn">
+
+                📅 Start New Day
+
+            </button>
+
+        </div>
+
+        <!-- Form Section -->
+
+        <div class="form-section">
+
+            <!-- Add Patient Card -->
+
+            <div class="glass patient-control-card">
+
+                <h2>➕ Add New Patient</h2>
+
+                <input
+                    type="text"
+                    id="patientName"
+                    placeholder="Enter Patient Name">
+
+                <input
+                    type="tel"
+                    id="patientMobile"
+                    placeholder="Enter Mobile Number">
+
+                    <select id="queueType">
+                        <option value="normal">
+                            Normal Patient
+                        </option>
+
+                        <option value="priority">
+                            Priority Patient
+                        </option>
+
+                        <option value="emergency">
+                            🚑 Emergency Patient
+                        </option>
+                    </select>
+
+                <div class="action-buttons">
+
+                    <button id="addBtn">
+                        Add Patient
+                    </button>
+
+                    <button id="callNextBtn">
+                        Call Next
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Consultation Time Card -->
+
+            <div class="glass ai-card">
+
+                <div class="ai-icon">
+                    🤖
+                </div>
+
+                <h2>AI Consultation Analytics</h2>
+
+                <h1 id="realAvgTime">
+                    12 Min
+                </h1>
+
+                <p>
+                    Average calculated from completed consultations
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Queue Table -->
+
+        <div class="glass">
+
+            <h2>📋 Live Queue List</h2>
+
+            <br>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Token</th>
+                        <th>Patient Name</th>
+                        <th>Queue Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="patientTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="glass analytics-section">
+
+            <h2>📊 Patient Status Distribution</h2>
+
+            <canvas
+                id="analyticsChart"
+                height="120">
+            </canvas>
+
+            <!-- Analytics Summary Cards -->
+
+            <div class="chart-summary">
+
+                <div class="summary-card">
+                    <p>✅ Completed</p>
+                    <h3 id="chartCompleted">0</h3>
+                </div>
+
+                <div class="summary-card">
+                    <p>⏳ Waiting</p>
+                    <h3 id="chartWaiting">0</h3>
+                </div>
+
+                <div class="summary-card">
+                    <p>🩺 Current</p>
+                    <h3 id="chartCurrent">0</h3>
+                </div>
+
+                <div class="summary-card">
+                    <p>⏭ Skipped</p>
+                    <h3 id="chartSkipped">0</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="glass analytics-section">
+
+            <h2>🏆 Hospital Performance Analytics</h2>
+
+            <div class="stats-grid">
+
+                <div class="glass stat-card">
+                    <h3>👥 Patients Today</h3>
+                    <h2 id="patientsToday">0</h2>
+                </div>
+
+                <div class="glass stat-card">
+                    <h3>✅ Completion Rate</h3>
+                    <h2 id="completionRate">0%</h2>
+                </div>
+
+                <div class="glass stat-card">
+                    <h3>⏱ Avg Wait Time</h3>
+                    <h2 id="avgWaitTime">0 Min</h2>
+                </div>
+
+                <div class="glass stat-card">
+                    <h3>🏆 Efficiency Score</h3>
+                    <h2 id="efficiencyScore">0%</h2>
+                </div>
+
+            </div>
+
+        </div>
+        <button
+            onclick="downloadReport()"
+            class="report-btn">
+
+            📄 Download Daily Report
+        </button>
+
+    </div>
+
+    <div class="announcement-bar">
+        Welcome to QueueCure Smart Hospital Queue Management System
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="http://localhost:5000/socket.io/socket.io.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/socket.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/receptionist.js"></script>
+
+<footer>
+    🏥 QueueCure © 2026
+    <br>
+    Smart Hospital Queue Management System
+</footer>
+
+</body>
+</html>

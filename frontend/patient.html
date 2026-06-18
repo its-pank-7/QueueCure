@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QueueCure Patient Portal</title>
+    <div class="hospital-header">
+
+        <img
+            src="assets/logo.png"
+            alt="QueueCure Logo"
+            class="logo">
+
+        <h2 class="hospital-name">
+            CityCare MultiSpeciality Hospital
+        </h2>
+
+    </div>
+    <div class="glass" style="text-align:center; margin-bottom:20px;">
+    <h2 id="liveClock">00:00:00</h2>
+    </div>
+    <button
+        class="fullscreen-btn"
+        onclick="document.documentElement.requestFullscreen()">
+        📺 Full Screen
+    </button>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="page-title">
+        <h1>🏥 QueueCure Patient Portal</h1>
+        <p>Track your queue status in real time</p>
+    </div>
+
+    <div class="glass" style="margin-bottom:20px;">
+
+        <h2>🔍 Check Your Queue Status</h2>
+
+        <input
+            type="number"
+            id="myToken"
+            placeholder="Enter Your Token Number">
+
+        <button
+            onclick="checkStatus()"
+            style="margin-top:15px;">
+            Check Status
+        </button>
+
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="glass stat-card">
+            <h3>🎫 Current Token</h3>
+            <h2 class="big-number" id="currentToken">--</h2>
+        </div>
+
+        <div class="glass stat-card">
+            <h3>👤 Your Token</h3>
+            <h2 class="big-number" id="yourTokenDisplay">--</h2>
+        </div>
+
+        <div class="glass stat-card">
+            <h3>👥 Tokens Ahead</h3>
+            <h2 class="big-number" id="tokensAhead">--</h2>
+        </div>
+        <div class="glass" style="margin-top:20px;">
+            <h3>Queue Progress</h3>
+
+            <progress
+                id="queueProgress"
+                value="0"
+                max="100"
+                style="width:100%; height:25px;">
+                <p id="progressText">
+                    0% Completed
+                </p>
+            </progress>
+        </div>
+
+        <div class="glass stat-card">
+            <h3>🤖 AI Predicted Wait Time</h3>
+            <h2 class="big-number" id="waitTime">--</h2>
+            <p id="predictionText">
+                Smart prediction based on queue status
+            </p>
+        </div>
+
+        <div class="glass ai-card">
+
+            <h3>🤖 QueueCure AI Engine</h3>
+
+            <p>
+                Predicting wait times using
+                queue priority and live hospital traffic.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="announcement-bar">
+    Welcome to QueueCure Smart Hospital Queue Management System
+</div>
+
+<script src="http://localhost:5000/socket.io/socket.io.js"></script>
+<script src="js/patient.js"></script>
+
+<footer>
+    🏥 QueueCure © 2026
+    <br>
+    Smart Hospital Queue Management System
+</footer>
+
+</body>
+</html>

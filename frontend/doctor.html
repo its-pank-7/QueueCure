@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueueCure Doctor Dashboard</title>
+    <div class="hospital-header">
+
+        <img
+            src="assets/logo.png"
+            alt="QueueCure Logo"
+            class="logo">
+
+        <h2 class="hospital-name">
+            CityCare MultiSpeciality Hospital
+        </h2>
+
+    </div>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+        <div class="page-title">
+            <h1>👨‍⚕️ Doctor Dashboard</h1>
+            <p>Manage Patient Consultations</p>
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="glass stat-card">
+                <h3>👨‍⚕️ Treated Today</h3>
+                <h2 id="treatedCount">0</h2>
+            </div>
+
+            <div class="glass stat-card">
+                <h3>✅ Completed</h3>
+                <h2 id="completedCount">0</h2>
+            </div>
+
+            <div class="glass stat-card">
+                <h3>⏭ Skipped</h3>
+                <h2 id="skippedCount">0</h2>
+            </div>
+
+            <div class="glass stat-card">
+                <h3>🏆 Performance</h3>
+                <h2 id="performanceScore">0%</h2>
+            </div>
+
+
+            <div class="glass stat-card">
+                <h3>🎫 Current Patient</h3>
+                <h2 id="currentToken">--</h2>
+            </div>
+
+            <div class="glass stat-card">
+                <h3>👤 Patient Name</h3>
+                <h2 id="currentName">--</h2>
+            </div>
+
+            <div class="glass stat-card">
+                <h3>➡ Next Token</h3>
+                <h2 id="nextToken">--</h2>
+            </div>
+
+            <div class="glass stat-card">
+                <h3>👥 Waiting</h3>
+                <h2 id="waitingCount">0</h2>
+            </div>
+
+        </div>
+
+
+    <div class="glass">
+
+        <h2>🩺 Consultation Controls</h2>
+
+        <div class="action-buttons">
+
+            <button id="completeBtn">
+                ✅ Complete Consultation
+            </button>
+
+            <button id="skipBtn">
+                ⏭ Skip Patient
+            </button>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="glass">
+
+        <h2>📋 Queue Overview</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Token</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="doctorTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="http://localhost:5000/socket.io/socket.io.js"></script>
+
+<script src="js/socket.js"></script>
+<script src="js/api.js"></script>
+<script src="js/doctor.js"></script>
+
+<footer>
+    🏥 QueueCure © 2026
+    <br>
+    Smart Hospital Queue Management System
+</footer>
+
+</body>
+</html>

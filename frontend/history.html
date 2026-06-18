@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueueCure History Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="page-title">
+        <h1>📜 QueueCure History Dashboard</h1>
+        <p>View Previous Day Hospital Records</p>
+    </div>
+
+    <div class="glass">
+
+        <h2>🔍 Search By Date</h2>
+
+        <input
+            type="date"
+            id="historyDate">
+
+        <button
+            onclick="loadHistory()">
+
+            Search Record
+
+        </button>
+
+    </div>
+
+    <br>
+
+    <div class="stats-grid">
+
+        <div class="glass stat-card">
+            <h3>👥 Total Patients</h3>
+            <h2 id="totalPatients">0</h2>
+        </div>
+
+        <div class="glass stat-card">
+            <h3>✅ Completed</h3>
+            <h2 id="completedPatients">0</h2>
+        </div>
+
+        <div class="glass stat-card">
+            <h3>⏭ Skipped</h3>
+            <h2 id="skippedPatients">0</h2>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="glass">
+
+        <h2>📋 Archived Patient Records</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Token</th>
+                    <th>Name</th>
+                    <th>Queue Type</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="historyTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/history.js"></script>
+
+</body>
+</html>
