@@ -1,9 +1,22 @@
 console.log("🚀 socket.js loaded");
 
+let socket;
+
 try {
 
-    // Make socket global
-    window.socket = io("https://queuecure-zrfx.onrender.com");
+    // Global Socket Connection
+    socket = io(
+        "https://queuecure-zrfx.onrender.com",
+        {
+            transports: ["websocket", "polling"],
+            reconnection: true,
+            reconnectionAttempts: 5,
+            reconnectionDelay: 1000
+        }
+    );
+
+    // Make available everywhere
+    window.socket = socket;
 
     console.log("📡 Trying to connect...");
 
@@ -13,13 +26,35 @@ try {
             "✅ Connected to Socket Server"
         );
 
+        console.log(
+            "🆔 Socket ID:",
+            socket.id
+        );
+
+    });
+
+    socket.on("disconnect", (reason) => {
+
+        console.warn(
+            "⚠️ Socket Disconnected:",
+            reason
+        );
+
+    });
+
+    socket.on("reconnect", () => {
+
+        console.log(
+            "🔄 Reconnected to Socket Server"
+        );
+
     });
 
     socket.on("connect_error", (err) => {
 
         console.error(
-            "❌ Socket Error:",
-            err
+            "❌ Socket Connection Error:",
+            err.message
         );
 
     });
@@ -33,10 +68,11 @@ try {
 
     });
 
-} catch (error) {
+}
+catch (error) {
 
     console.error(
-        "🔥 JS Error:",
+        "🔥 Socket Initialization Error:",
         error
     );
 
