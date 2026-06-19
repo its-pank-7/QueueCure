@@ -182,7 +182,8 @@ FinalScreenshots/
 
 ### Clone Repository
 
-git clone https://github.com/yourusername/QueueCure.git
+git clone https://github.com/its-pank-7/QueueCure
+
 
 ### Backend
 
