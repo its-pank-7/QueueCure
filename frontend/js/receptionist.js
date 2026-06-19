@@ -370,7 +370,7 @@ socket.on("queueUpdated", () => {
 function downloadReport(){
 
     window.open(
-        "http://localhost:5000/api/reports/daily-report",
+        "https://queuecure-zrfx.onrender.com/api/reports/daily-report",
         "_blank"
     );
 
@@ -389,7 +389,7 @@ document
         if (!confirmReset) return;
 
         const response = await fetch(
-            "http://localhost:5000/api/admin/archive-day",
+            "https://queuecure-zrfx.onrender.com/api/admin/archive-day",
             {
                 method: "POST"
             }
@@ -409,7 +409,7 @@ async function loadRealAverageTime() {
 
         const response =
         await fetch(
-            "http://localhost:5000/api/patients/average-time"
+            "https://queuecure-zrfx.onrender.com/api/patients/average-time"
         );
 
         const data =

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/patients";
+const API_URL = "https://queuecure-zrfx.onrender.com/api/patients";
 
 // GET ALL PATIENTS
 async function getPatients() {
@@ -36,7 +36,7 @@ async function getCurrentPatient() {
 async function getSettings() {
 
     const response = await fetch(
-        "http://localhost:5000/api/settings"
+        "https://queuecure-zrfx.onrender.com/api/settings"
     );
 
     return await response.json();
@@ -45,7 +45,7 @@ async function getSettings() {
 async function updateSettings(time) {
 
     const response = await fetch(
-        "http://localhost:5000/api/settings",
+        "https://queuecure-zrfx.onrender.com/api/settings",
         {
             method: "PUT",
             headers: {
@@ -64,7 +64,7 @@ async function completeConsultation() {
 
     const response =
     await fetch(
-        "http://localhost:5000/api/patients/complete-current",
+        "https://queuecure-zrfx.onrender.com/api/patients/complete-current",
         {
             method: "PUT"
         }
@@ -78,7 +78,7 @@ async function skipPatient() {
 
     const response =
     await fetch(
-        "http://localhost:5000/api/patients/skip-current",
+        "https://queuecure-zrfx.onrender.com/api/patients/skip-current",
         {
             method: "PUT"
         }

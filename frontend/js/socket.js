@@ -3,7 +3,7 @@ console.log("🚀 socket.js loaded");
 try {
 
     // Make socket global
-    window.socket = io("http://localhost:5000");
+    window.socket = io("https://queuecure-zrfx.onrender.com");
 
     console.log("📡 Trying to connect...");
 

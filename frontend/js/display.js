@@ -1,6 +1,6 @@
-const API_URL = "http://localhost:5000/api/patients";
+const API_URL = "https://queuecure-zrfx.onrender.com/api/patients";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://queuecure-zrfx.onrender.com");
 
 // Initial Load
 loadDisplay();

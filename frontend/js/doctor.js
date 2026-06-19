@@ -2,7 +2,7 @@ async function loadDoctorDashboard() {
 
     const response =
     await fetch(
-        "http://localhost:5000/api/patients"
+        "https://queuecure-zrfx.onrender.com/api/patients"
     );
 
     const data =

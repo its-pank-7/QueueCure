@@ -1,5 +1,5 @@
 const API_URL =
-"http://localhost:5000/api/admin";
+"https://queuecure-zrfx.onrender.com/api/admin";
 
 async function loadHistory() {
 
