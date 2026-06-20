@@ -1,191 +1,282 @@
-# 🏥 QueueCure
+# 🏥 QueueCure – AI-Powered Smart Hospital Queue Management System
 
-### AI-Powered Smart Hospital Queue Management System
+![Hackathon Project](https://img.shields.io/badge/Hackathon-Queue%20Cure%20'26-blue)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-green)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)
+![Socket.IO](https://img.shields.io/badge/Realtime-Socket.IO-black)
+![License](https://img.shields.io/badge/License-Educational-orange)
 
-QueueCure is a full-stack hospital queue management system designed to reduce patient waiting times, improve hospital workflow, and provide real-time queue visibility using modern web technologies.
+## 🚀 Project Overview
 
-The system digitizes the entire patient journey from registration to consultation while providing real-time updates, analytics, reporting, and historical record management.
+QueueCure is a real-time hospital queue management platform designed to eliminate paper-token systems and modernize patient flow management in clinics and hospitals.
+
+Built using Node.js, Express.js, MongoDB Atlas, and Socket.IO, QueueCure provides instant queue synchronization, intelligent wait-time estimation, emergency queue prioritization, analytics, reporting, and historical record management.
+
+The platform improves transparency for patients, reduces receptionist workload, enhances doctor coordination, and delivers actionable operational insights for healthcare facilities.
 
 ---
 
-## 🚀 Problem Statement
+## 🎯 Problem Statement
 
-Traditional hospitals still rely on paper tokens and manual queue management, leading to:
+Over 76% of clinics still rely on manual queue systems, leading to:
 
 * Long waiting times
-* Poor queue visibility
-* Overloaded reception staff
-* No estimated wait time
-* Lack of analytics and reporting
+* No queue visibility
+* Receptionist overload
+* Unpredictable consultation schedules
 * Poor patient experience
+* Lack of operational analytics
 
-QueueCure solves these challenges through intelligent queue management and real-time monitoring.
+QueueCure addresses these challenges through a fully digital, real-time queue management ecosystem.
 
 ---
 
 ## 💡 Solution
 
-QueueCure provides:
+QueueCure transforms traditional queue management into an intelligent digital workflow:
 
-* Smart Patient Registration
-* Automated Token Generation
-* Emergency & Priority Queue Handling
-* Real-Time Queue Tracking
-* Doctor Consultation Dashboard
-* Live Display Screen
-* Voice Announcements
-* AI-Based Wait Time Analytics
-* Daily PDF Reports
-* History Archive System
+Patient Registration
+→ Smart Queue Allocation
+→ Real-Time Synchronization
+→ Doctor Consultation
+→ Wait-Time Analytics
+→ Voice Announcement
+→ Live Display Updates
+→ PDF Reports
+→ Historical Archiving
 
 ---
 
-## ✨ Key Features
+# ✨ Core Features
 
-### 🏥 Receptionist Dashboard
+## 🏥 Receptionist Dashboard
 
-* Patient Registration
+* One-Click Patient Registration
 * Auto Token Generation
 * Queue Type Selection
+
+  * Normal
+  * Priority
+  * Emergency
 * Call Next Patient
+* Skip Patient
 * Queue Statistics
-* Real-Time Synchronization
+* Real-Time Queue Synchronization
 * Daily Archive System
 
-### 👨‍⚕️ Doctor Dashboard
+---
 
-* View Current Patient
+## 👨‍⚕️ Doctor Dashboard
+
+* Current Patient Monitoring
 * Complete Consultation
-* Skip Patient
-* Queue Monitoring
+* Skip Consultation
+* Live Queue Tracking
 * Real-Time Updates
 
-### 📺 Live Display Screen
+---
+
+## 👤 Patient Portal
+
+* Current Token Tracking
+* Queue Position
+* Tokens Ahead
+* Estimated Wait Time
+* Live Status Updates
+
+---
+
+## 📺 Live Display Screen
 
 * Current Token Display
-* Queue Status Updates
-* Hospital Display Mode
-* Auto Refresh
+* Patient Information
+* Doctor Information
+* Waiting Queue Status
+* Real-Time Updates
 
-### 📜 History Module
+---
 
-* Daily Archive Storage
+## 🔊 Voice Announcement System
+
+Automated announcements:
+
+"Token Number 125, Prathmesh Jadhav, please proceed to Doctor Cabin."
+
+Designed to improve accessibility and reduce missed consultations.
+
+---
+
+## 📊 AI Consultation Analytics
+
+QueueCure uses dynamic consultation analytics to estimate waiting times.
+
+### Consultation Duration
+
+consultationDuration = completedAt − calledAt
+
+### Average Consultation Time
+
+averageConsultationTime = totalDuration / completedPatients
+
+### Estimated Wait Time
+
+estimatedWaitTime = tokensAhead × averageConsultationTime
+
+Unlike traditional fixed estimates, QueueCure adapts to real clinic performance in real time.
+
+---
+
+## 📜 History Module
+
+* Daily Archive Records
 * Date-Based Search
-* Historical Queue Records
-* Performance Tracking
-
-### 📊 Analytics
-
-* Queue Statistics
-* Completion Rate
-* Efficiency Score
-* Average Wait Time
-* AI Consultation Analytics
-
-### 📄 Reports
-
-* Daily PDF Report Generation
-* Patient Summary
-* Queue Analytics Summary
+* Historical Queue Tracking
+* Operational Insights
 
 ---
 
-## 🔄 Complete Workflow
+## 📄 PDF Reporting
 
-Receptionist Registration
-→ Smart Queue Allocation
-→ Doctor Consultation
-→ Patient Tracking
-→ Live Display
-→ Voice Announcement
-→ Analytics
-→ PDF Report
-→ History Archive
+* Daily Queue Reports
+* Consultation Statistics
+* Patient Summaries
+* Downloadable PDF Exports
 
 ---
 
-## ⚙️ Technology Stack
+# 🔄 Real-Time Architecture
 
-### Frontend
+QueueCure uses Socket.IO to achieve sub-second synchronization across:
+
+* Receptionist Dashboard
+* Doctor Dashboard
+* Patient Portal
+* Live Display Screen
+
+Benefits:
+
+* No page refresh required
+* Instant queue updates
+* Live token changes
+* Dynamic wait-time updates
+* Automatic reconnection support
+
+---
+
+# ⚙️ Technology Stack
+
+## Frontend
 
 * HTML5
 * CSS3
 * JavaScript
 
-### Backend
+## Backend
 
 * Node.js
 * Express.js
 
-### Database
+## Database
 
 * MongoDB Atlas
 
-### Real-Time Communication
+## Real-Time Communication
 
 * Socket.IO
 
-### Reporting
+## Reporting
 
 * PDFKit
 
+## Deployment
+
+### Frontend
+
+Vercel
+
+### Backend
+
+Render
+
+### Database
+
+MongoDB Atlas
+
 ---
 
-## 📊 Project Highlights
+# 📈 Project Highlights
 
-* 100% Real-Time Synchronization
-* AI-Based Wait Time Calculation
+* Real-Time Queue Synchronization
 * Emergency Queue Prioritization
+* Dynamic Wait-Time Calculation
 * Multi-Portal Architecture
-* Daily Report Generation
+* Voice Announcement System
+* Daily PDF Reports
 * Historical Data Archiving
-* Modern Glassmorphism UI
+* Glassmorphism UI Design
+* Production-Inspired Architecture
 
 ---
 
-## 🧠 AI Features
+# 📸 Project Screenshots
 
-QueueCure includes an intelligent consultation analytics engine that calculates average consultation duration from completed consultations and uses historical data to estimate patient waiting times.
-
----
-
-## 🚀 Future Scope
-
-* Mobile Application
-* Multi-Hospital Network
-* Cloud Deployment
-* Advanced AI Prediction Models
-* SMS Notifications
-* WhatsApp Alerts
-* Appointment Booking System
-
----
-
-## 📸 Screenshots
-
-Screenshots available inside:
+Screenshots are available inside:
 
 FinalScreenshots/
 
+Included modules:
+
 * Landing Page
 * Receptionist Dashboard
-* Queue Management
-* Analytics Dashboard
 * Doctor Dashboard
-* Live Display
-* History Records
+* Patient Portal
+* Live Display Screen
+* Analytics Dashboard
+* History Module
 * PDF Reports
 
 ---
 
-## 🛠 Installation
+# 🏗 System Architecture
 
-### Clone Repository
+QueueCure follows a layered architecture:
+
+Frontend (Client Layer)
+↓
+Node.js + Express.js API Layer
+↓
+Socket.IO Real-Time Layer
+↓
+MongoDB Atlas Database
+
+Supporting Services:
+
+* Analytics Engine
+* Voice Announcement Module
+* Archive Service
+* PDF Report Generator
+
+---
+
+# 🚀 Live Deployment
+
+### Frontend
+
+https://queue-cure-465l.vercel.app/
+
+### Backend
+
+https://queuecure-zrfx.onrender.com
+
+---
+
+# 🛠 Local Installation
+
+## Clone Repository
 
 git clone https://github.com/its-pank-7/QueueCure
 
-
-### Backend
+## Backend Setup
 
 cd backend
 
@@ -193,32 +284,44 @@ npm install
 
 npm start
 
-### Frontend
+## Frontend Setup
 
 Open index.html in browser
 
 ---
 
-## 👨‍💻 Developed By
+# 🔮 Future Scope
 
-### 🚀 Pankaj Raut
+* Mobile Application
+* Multi-Doctor Support
+* Multi-Hospital Network
+* AI Queue Forecasting
+* SMS Notifications
+* WhatsApp Integration
+* Appointment Scheduling
+* Cloud-Native Scaling
+* Predictive Analytics
 
-B.Tech AIML Student | Full Stack Developer
+---
 
-Building intelligent solutions that simplify real-world healthcare challenges.
+# 👨‍💻 Developer
 
-"Transforming Hospital Queues into Seamless Patient Experiences."
+## Pankaj Raut
+
+B.Tech (Artificial Intelligence & Machine Learning)
+
+Full Stack Developer | Healthcare Technology Enthusiast
+
+Focused on building intelligent systems that solve real-world operational challenges through automation, analytics, and modern software architecture.
+
+---
+
+# 🏆 Queue Cure '26 Hackathon Submission
+
+QueueCure demonstrates how real-time communication, intelligent analytics, and modern web technologies can transform traditional hospital queue systems into efficient, transparent, and scalable digital healthcare solutions.
 
 ---
 
 ## 📜 License
 
-This project was developed for educational, research, and hackathon purposes.
-
----
-
-## 🏆 Hackathon Project
-
-QueueCure – AI-Powered Smart Hospital Queue Management System
-
-Designed to modernize hospital queue operations and improve patient experience through intelligent automation and real-time visibility.
+This project is intended for educational, research, and hackathon purposes.
